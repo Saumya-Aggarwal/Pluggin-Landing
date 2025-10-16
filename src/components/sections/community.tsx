@@ -86,13 +86,13 @@ export function CommunityImpactSection() {
             Our Impact
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#191E23]">
-            Together, We're Making{" "}
+            Together, We&apos;re Making{" "}
             <span className="bg-gradient-to-r from-[#1E824C] to-[#21A6FE] bg-clip-text text-transparent">
               Real Change
             </span>
           </h2>
           <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
-            Our community's collective impact on the planet and their wallets
+            Our community&apos;s collective impact on the planet and their wallets
           </p>
         </motion.div>
 

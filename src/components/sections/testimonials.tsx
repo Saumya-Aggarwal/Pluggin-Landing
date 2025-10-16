@@ -100,7 +100,7 @@ export function TestimonialsSection() {
 
                   {/* Testimonial Content */}
                   <p className="text-[#6B7280] mb-6 text-base leading-relaxed">
-                    "{testimonial.content}"
+                    &quot;{testimonial.content}&quot;
                   </p>
 
                   {/* Author Info */}

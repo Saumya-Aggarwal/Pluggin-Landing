@@ -26,12 +26,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { useToast } from "@/hooks/use-toast"
 
 // ============================================
@@ -76,25 +70,6 @@ const TOPICS = [
 const QUICK_LINKS = [
   { label: "Help Center", href: "/help", icon: ExternalLink },
   { label: "FAQ", href: "#faq", icon: ExternalLink },
-]
-
-const FAQ_ITEMS = [
-  {
-    question: "How do I find charging stations near me?",
-    answer: "Use our mobile app or web platform to view real-time availability of charging stations in your area. Filter by connector type, charging speed, and price.",
-  },
-  {
-    question: "What does it cost to host a charger?",
-    answer: "Hosting is free! We provide the equipment, installation, and maintenance. You earn revenue from every charging session at your location.",
-  },
-  {
-    question: "How long does it take to get support?",
-    answer: "Our support team responds to all inquiries within 24 hours during business days. For urgent technical issues, call our hotline at +1 (555) 123-4567.",
-  },
-  {
-    question: "Can I use PlugInn chargers with any EV?",
-    answer: "Yes! Our network supports all major EV models with multiple connector types (CCS, CHAdeMO, Type 2). Check the app for specific charger compatibility.",
-  },
 ]
 
 // ============================================
@@ -436,7 +411,7 @@ function ContactFormSection() {
                       <span className="text-red-400">*</span>
                     </FormLabel>
                     <FormDescription className="text-xs text-[rgb(var(--muted))]">
-                      We'll store your data securely and only use it to respond to your inquiry. Data is retained for 90 days.
+                      We&apos;ll store your data securely and only use it to respond to your inquiry. Data is retained for 90 days.
                     </FormDescription>
                     <FormMessage className="text-red-400" />
                   </div>
@@ -465,38 +440,6 @@ function ContactFormSection() {
           </form>
         </Form>
       </div>
-    </motion.div>
-  )
-}
-
-function FAQAccordion() {
-  return (
-    <motion.div
-      variants={fadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className="mt-12"
-    >
-      <h3 className="text-2xl font-bold text-[rgb(var(--white))] mb-6">
-        Frequently Asked Questions
-      </h3>
-      <Accordion type="single" collapsible className="space-y-4">
-        {FAQ_ITEMS.map((item, index) => (
-          <AccordionItem
-            key={index}
-            value={`item-${index}`}
-            className="bg-[rgb(var(--panel))] border border-[rgb(var(--mint))]/20 rounded-lg px-6 data-[state=open]:border-[rgb(var(--mint))]/40"
-          >
-            <AccordionTrigger className="text-[rgb(var(--white))] hover:text-[rgb(var(--mint))] text-left py-4">
-              {item.question}
-            </AccordionTrigger>
-            <AccordionContent className="text-[rgb(var(--muted))] pb-4">
-              {item.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
     </motion.div>
   )
 }

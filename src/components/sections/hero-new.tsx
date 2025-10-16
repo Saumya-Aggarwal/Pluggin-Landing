@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function HeroSection() {
   return (
@@ -21,7 +20,7 @@ export function HeroSection() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[rgb(var(--white))] leading-[1.02] tracking-tight"
               style={{ fontSize: 'clamp(36px, 4vw + 1rem, 64px)' }}
             >
-              WE'VE GOT YOUR BACK.
+              WE&apos;VE GOT YOUR BACK.
             </h1>
 
             {/* Subtext */}

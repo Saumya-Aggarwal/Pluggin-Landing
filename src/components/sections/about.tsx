@@ -21,8 +21,8 @@ export function AboutSection() {
             Say Goodbye to Range Anxiety
           </h2>
           <p className="text-lg text-[rgb(var(--muted))] max-w-3xl mx-auto leading-relaxed">
-            We understand the worry of running out of charge. That's why PlugInn connects you to a vast network of verified local chargers, 
-            ensuring you're never far from a reliable charging point. Drive with confidence, knowing your next charge is always nearby.
+            We understand the worry of running out of charge. That&apos;s why PlugInn connects you to a vast network of verified local chargers, 
+            ensuring you&apos;re never far from a reliable charging point. Drive with confidence, knowing your next charge is always nearby.
           </p>
         </motion.div>
 
