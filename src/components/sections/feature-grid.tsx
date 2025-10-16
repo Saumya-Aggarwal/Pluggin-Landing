@@ -93,8 +93,8 @@ function CardImage({
       {/* Mint overlay on hover */}
       <div className="absolute inset-0 bg-[rgb(var(--mint))]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
-      {/* Blending gradient overlay - fades image to dark panel at bottom */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[rgb(var(--panel))] via-[rgb(var(--panel))]/80 to-transparent pointer-events-none" />
+      {/* Blending gradient overlay - fades image to dark panel at bottom - 80% shorter */}
+      <div className="absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-[rgb(var(--panel))] via-[rgb(var(--panel))]/80 to-transparent pointer-events-none" />
     </div>
   )
 }
@@ -175,8 +175,10 @@ function FeatureCard(props: FeatureCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`
-        group relative rounded-2xl bg-[rgb(var(--panel))] shadow-lg 
-        overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(143,226,214,0.2)]
+        group relative rounded-2xl bg-[rgb(var(--panel))] 
+        border border-[rgb(var(--mint))]/20 shadow-lg 
+        overflow-hidden transition-all duration-300 
+        hover:shadow-[0_0_30px_rgba(143,226,214,0.2)] hover:border-[rgb(var(--mint))]/40
         ${variant === "large" ? "md:col-span-2" : ""} ${minHeightClass}
       `}
     >
