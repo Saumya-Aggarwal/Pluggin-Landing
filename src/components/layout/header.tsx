@@ -48,6 +48,9 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 w-full bg-[rgb(var(--bg-dark))]/95 backdrop-blur-sm border-b border-[rgb(var(--muted))]/20 transition-transform duration-300 ease-in-out ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
+      style={{
+        boxShadow: '0 2px 15px rgba(143, 226, 214, 0.25)'
+      }}
     >
       <div className="container max-w-[1200px] mx-auto flex h-20 items-center justify-between px-8">
         {/* Logo */}
@@ -55,9 +58,9 @@ export function Header() {
           <Image 
             src="/logo.webp" 
             alt="PlugInn Logo" 
-            width={48} 
-            height={48}
-            className="w-12 h-12"
+            width={100} 
+            height={100}
+            className="w-16 h-16"
           />
           <span className="text-2xl font-bold text-[rgb(var(--white))] tracking-tight">
             PLUG INN

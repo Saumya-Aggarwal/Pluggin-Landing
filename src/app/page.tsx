@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+      {/* Spacer to compensate for fixed header */}
+      <div className="h-16 md:h-8"></div>
+
       <main className="flex-1 py-12">
         <HeroSection />
-        
-        <div className="flex justify-center py-8">
-          <Separator className="max-w-6xl bg-[rgb(var(--mint))] opacity-50" />
-        </div>
+    
         
         <AboutSection />
         

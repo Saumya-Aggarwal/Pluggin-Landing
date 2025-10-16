@@ -13,9 +13,9 @@ export function FooterNew() {
               <Image 
                 src="/logo.webp" 
                 alt="PlugInn Logo" 
-                width={40} 
-                height={40}
-                className="w-10 h-10"
+                width={100} 
+                height={100}
+                className="w-16 h-16"
               />
               <span className="text-xl font-bold text-[rgb(var(--white))] tracking-tight">
                 PLUG INN
