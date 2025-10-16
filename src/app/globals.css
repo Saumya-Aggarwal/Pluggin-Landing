@@ -1,26 +1,177 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Pluginn New Design System - Dark Theme */
+  --bg-dark: 15 23 33;              /* #0f1721 - Main background */
+  --panel: 17 24 38;                 /* #111826 - Darker panels */
+  --surface: 233 241 239;            /* #e9f1ef - Light card bg */
+  --white: 255 255 255;              /* #ffffff */
+  --muted: 108 117 128;              /* #6c7580 - Secondary text */
+  --mint: 143 226 214;               /* #8FE2D6 - Primary CTA */
+  --mint-dark: 96 203 184;           /* #60cbb8 - CTA hover */
+  --outline-mint: 114 199 182;       /* #72c7b6 - Outline borders */
+  --accent-teal: 41 194 176;         /* #29c2b0 - Icons/accents */
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-round: 999px;
+  
+  /* Shadows */
+  --shadow-lg: 0 8px 24px rgba(11, 13, 16, 0.25);
+  --card-shadow: rgba(11, 13, 16, 0.35);
+  
+  /* Component Settings */
+  --radius: 0.75rem;
+  
+  /* Theme Colors - Dark Mode */
+  --background: 15 23 33;
+  --foreground: 255 255 255;
+  --card: 233 241 239;
+  --card-foreground: 15 23 33;
+  --popover: 17 24 38;
+  --popover-foreground: 255 255 255;
+  
+  /* PlugInn Primary (Green) */
+  --primary: oklch(0.495 0.117 156.586);
+  --primary-foreground: oklch(1 0 0);
+  
+  /* PlugInn Secondary (Power Blue) */
+  --secondary: oklch(0.669 0.142 234.776);
+  --secondary-foreground: oklch(1 0 0);
+  
+  
+  /* Primary - Mint */
+  --primary: 143 226 214;
+  --primary-foreground: 15 23 33;
+  
+  /* Secondary - Darker panels */
+  --secondary: 17 24 38;
+  --secondary-foreground: 255 255 255;
+  
+  --muted: 108 117 128;
+  --muted-foreground: 220 230 229;
+  --accent: 41 194 176;
+  --accent-foreground: 255 255 255;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: 114 199 182;
+  --input: 17 24 38;
+  --ring: 143 226 214;
+  --chart-1: 143 226 214;
+  --chart-2: 96 203 184;
+  --chart-3: 41 194 176;
+  --chart-4: 114 199 182;
+  --chart-5: 143 226 214;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-[rgb(var(--bg-dark))] text-[rgb(var(--white))];
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.5px;
+  }
+  
+  p, span, a {
+    letter-spacing: 0.2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Charger Ring Animation */
+@keyframes ring-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
+
+.ring-animation {
+  animation: ring-pulse 2.5s ease-out infinite;
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(143, 226, 214, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-outline {
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: rgb(var(--mint));
+  color: rgb(var(--bg-dark));
+  border-color: rgb(var(--mint));
+}
+
+/* Feature Card Hover */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(11, 13, 16, 0.35);
+}
+
