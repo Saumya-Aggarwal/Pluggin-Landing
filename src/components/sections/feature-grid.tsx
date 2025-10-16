@@ -82,7 +82,7 @@ function CardImage({
   const heightClass = CARD_STYLES[variant].imageHeight
 
   return (
-    <div className={`relative w-full overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 ${heightClass}`}>
+    <div className={`relative w-full overflow-hidden bg-gradient-to-br from-[rgb(var(--panel))] to-[rgb(var(--bg-dark))] ${heightClass}`}>
       <Image
         src={isHovered ? gifImage : staticImage}
         alt={title}
@@ -93,8 +93,8 @@ function CardImage({
       {/* Mint overlay on hover */}
       <div className="absolute inset-0 bg-[rgb(var(--mint))]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
-      {/* Blending gradient overlay - fades image to white at bottom */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none" />
+      {/* Blending gradient overlay - fades image to dark panel at bottom */}
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[rgb(var(--panel))] via-[rgb(var(--panel))]/80 to-transparent pointer-events-none" />
     </div>
   )
 }
@@ -119,14 +119,14 @@ function CardContent({
   const heightClass = CARD_STYLES[variant].contentHeight
 
   return (
-    <div className={`relative p-6 md:p-8 flex justify-between bg-white ${heightClass}`}>
+    <div className={`relative p-6 md:p-8 flex justify-between bg-[rgb(var(--panel))] ${heightClass}`}>
       {/* Text Content */}
       <div className="relative z-10 flex-col">
-        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 leading-tight group-hover:text-[rgb(var(--bg-dark))] transition-colors">
+        <h3 className="text-lg md:text-xl font-bold text-[rgb(var(--white))] mb-2 leading-tight group-hover:text-[rgb(var(--mint))] transition-colors">
           {title}
         </h3>
         
-        <p className="text-xs md:text-sm text-gray-600 leading-relaxed line-clamp-3">
+        <p className="text-xs md:text-sm text-[rgb(var(--muted))] leading-relaxed line-clamp-3">
           {description}
         </p>
       </div>
@@ -175,8 +175,8 @@ function FeatureCard(props: FeatureCardProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`
-        group relative rounded-2xl bg-white shadow-lg 
-        overflow-hidden transition-all duration-300 hover:shadow-2xl
+        group relative rounded-2xl bg-[rgb(var(--panel))] shadow-lg 
+        overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(143,226,214,0.2)]
         ${variant === "large" ? "md:col-span-2" : ""} ${minHeightClass}
       `}
     >
