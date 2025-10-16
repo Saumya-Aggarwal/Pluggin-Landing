@@ -6,6 +6,7 @@ import { HowItWorksRow } from "@/components/sections/how-it-works-row"
 import { AboutSection } from "@/components/sections/about"
 import { FeatureGrid } from "@/components/sections/feature-grid"
 import { FAQSection } from "@/components/sections/faq-new"
+import { ContactSection } from "@/components/sections/contact"
 import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
@@ -44,6 +45,12 @@ export default function Home() {
         </div>
         
         <FAQSection />
+        
+        <div className="flex justify-center py-8">
+          <Separator className="max-w-6xl bg-[rgb(var(--mint))] opacity-50" />
+        </div>
+        
+        <ContactSection />
       </main>
       <FooterNew />
     </div>
