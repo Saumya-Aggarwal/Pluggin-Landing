@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative min-h-[85vh] md:min-h-[90vh] py-20 md:py-32 overflow-hidden">
       {/* Fade overlay from right to left */}
       <div className="absolute inset-0 bg-gradient-to-r from-[rgb(var(--bg-dark))] via-[rgb(var(--bg-dark))]/60 to-transparent pointer-events-none z-10" />
       
